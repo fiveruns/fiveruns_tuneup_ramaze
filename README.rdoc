@@ -1,0 +1,14 @@
+= FiveRuns Tuneup panel (Ramaze)
+
+Provides a FiveRuns Tuneup panel for the Ramaze framework
+
+== Status
+
+The panel is currently barely functional; no sharing functionality.
+
+== Installation
+
+  sudo gem install fiveruns_tuneup_ramaze
+
+Right before Ramaze.start, add:
+  require 'fiveruns_tuneup_ramaze'
