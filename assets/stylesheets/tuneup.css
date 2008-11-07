@@ -70,8 +70,8 @@ version: 2.5.1
 #tuneup #tuneup-data { position: relative;}
 #tuneup #tuneup-top { position: absolute; top: 0px; right: 10px; padding: 0; margin: 0 0 0 150px;  z-index: 11000; }
 #tuneup #tuneup-top #tuneup-save-link { float: right; line-height: 45px; vertical-align: bottom; text-align: center; font-weight: bold; padding: 0 9px 0 20px; background: url(/fiveruns_tuneup/images/pointer.gif) 0 50% no-repeat; }
-#tuneup #tuneup-back-to-run-link { float: right; line-height: 15px; vertical-align: bottom; text-align: center; padding: 8px; background-color: #333; -moz-border-radius: 5px; margin: 7px 10px 0px 0px; border: 1px solid black;}
-#tuneup #tuneup-summary {float: right; padding: 10px; width: 400px; padding-bottom: 18px; margin-top: 3px; text-align: center; color: #ddd; -moz-border-radius: 6px 6px 0 0; }
+#tuneup #tuneup-back-to-run-link { float: right; line-height: 15px; vertical-align: bottom; text-align: center; padding: 8px; background-color: #333; -webkit-border-radius: 5px; -moz-border-radius: 5px; margin: 7px 10px 0px 0px; border: 1px solid black;}
+#tuneup #tuneup-summary {float: right; padding: 10px; width: 400px; padding-bottom: 18px; margin-top: 3px; text-align: center; color: #ddd; -webkit-border-radius: 6px 6px 0 0; -moz-border-radius: 6px 6px 0 0; }
 
 #tuneup #tuneup-data:hover #tuneup-summary { /* h */
   border-bottom: 0px;
@@ -82,6 +82,7 @@ version: 2.5.1
   display: block;
   background: #000;
   min-width: 300px;
+  -webkit-border-radius: 6px 0 6px 6px;
   -moz-border-radius: 6px 0 6px 6px;
 }
 
