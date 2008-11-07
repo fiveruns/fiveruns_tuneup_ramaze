@@ -1,3 +1,14 @@
+Fiveruns::Tuneup::Superlative.on Ramaze::Controller do
+
+  def handle(path)
+    Thread.current[:fiveruns_tuneup_action_path] = path
+    result = super
+    Thread.current[:fiveruns_tuneup_action_path] = nil
+    result
+  end
+  
+end
+
 Fiveruns::Tuneup::Superlative.on Ramaze::Action, :instances do
   
   def uncached_render(*args, &block)
@@ -29,10 +40,8 @@ Fiveruns::Tuneup::Superlative.on Ramaze::Action, :instances do
       Ramaze::Log.dev 'TuneUp: Valid request.'
     end
     if tuneup
-      unless @_fiveruns_tuneup_uncached_render
-        result.sub!(/\s*<!-- FIVERUNS_TUNEUP:START -->.*<!-- FIVERUNS_TUNEUP:END -->\s*/s, '')
-      end
-      run = Fiveruns::Tuneup::Run.new(path, tuneup)
+      result.sub!(/\s*<!-- FIVERUNS_TUNEUP:START -->.*<!-- FIVERUNS_TUNEUP:END -->\s*/ms, '')
+      run = Fiveruns::Tuneup::Run.new(Thread.current[:fiveruns_tuneup_action_path], tuneup)
       run.save
       Fiveruns::Tuneup.insert_panel(result, run, false)
     end
